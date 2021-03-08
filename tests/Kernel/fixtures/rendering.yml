@@ -1522,6 +1522,27 @@
       div.ecl-u-border-top: 0
 - array:
     '#type': pattern
+    '#id': navigation_list
+    '#fields':
+      title: 'Navigation list title'
+      links:
+        - label: 'Child 1'
+        - label: 'Child 2'
+        - label: 'Child 3'
+          url: 'http://example.com/child3'
+  assertions:
+    equals:
+      'h2.ecl-u-ma-none.ecl-u-type-prolonged-xl.ecl-u-type-bold': 'Navigation list title'
+      'li.ecl-unordered-list__item:nth-child(1)': 'Child 1'
+      'li.ecl-unordered-list__item:nth-child(2)': 'Child 2'
+      'li.ecl-unordered-list__item:nth-child(3) a.ecl-link[href="http://example.com/child3"]': 'Child 3'
+    count:
+      ul.ecl-u-mt-m.ecl-unordered-list.ecl-unordered-list--no-bullet: 1
+      li.ecl-unordered-list__item: 3
+      'p.ecl-u-mb-none.ecl-u-mt-m.ecl-u-type-color-grey.ecl-u-type-paragraph': 0
+      div.ecl-u-border-top: 0
+- array:
+    '#type': pattern
     '#id': accordion
     '#fields':
       identifier: "id"
